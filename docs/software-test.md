@@ -41,11 +41,32 @@
 [Google Testing Blog: Test Sizes](https://testing.googleblog.com/2010/12/test-sizes.html)によると，GoogleではUIテスト・統合テスト・ユニットテストという分類ではなく，データの通信や外部システムの依存関係，実行時間などに応じてSmall, Medium, Largeのように種類を区分している．UIテスト・統合テスト・ユニットテストは厳密な区分があるわけではないので，より厳密にテストを呼び分けてメンバー間の連携を取りやすくするという目的があるらしい．
 
 
+## 自動テストのカバレッジ(網羅率)
+
+自動テストで網羅できているコードの割合をカバレッジと呼び，ほとんどのテストツールで簡単にカバレッジを出力することができる．カバレッジを確認しながらソフトウェア全体のテスト量が十分か，またどの箇所のテストが不足しているかなどを把握する手がかりになる．カバレッジには以下の種類がある．
+
+- 命令網羅 C0 statement coverage
+  - 全ての命令(処理)を網羅するカバレッジ計測のこと
+  - 条件分岐ごとの処理を1回ずつ通せばよい
+- 分岐網羅 C1 branch coverage
+  - 条件分岐に着目し，条件式の全ての組み合わせを網羅するカバレッジ計測のこと
+  - 条件分岐の組み合わせを網羅する必要があるので，C0よりやや複雑になる
+- 条件網羅 C2 condition coverage
+  - `a >= 10 and b < 0`など2つの条件式を1つの条件式として評価する場合を考える
+  - C1では`True`と`False`の2つだけで網羅とする．C2では以下の4つの条件を網羅していることを求める
+    - `a >= 10`が真の場合と偽の場合
+    - `b < 0`が真の場合と偽の場合
+
+基本的には`C0`でのカバレッジを計測することが多い．
+
+
 ## テスト関連のおすすめ記事・書籍
 
 - [テスト自動化 / Test_Automation - Speaker Deck](https://speakerdeck.com/cybozuinsideout/test-automation)
 - [Google Testing Blog](https://testing.googleblog.com/)
 - [Google Testing Blog: Test Sizes](https://testing.googleblog.com/2010/12/test-sizes.html)
+- [テストの種類と技法 - Qiita](https://qiita.com/ktarow/items/8c3d94d6c21a0c86b799)
+  - テストの概要が5分ほどでざっと知れる
 - [組織にテストを書く文化を根付かせる戦略と戦術](https://www.slideshare.net/t_wada/test-strategy-and-tactics)
   - @t_wada によるテストに対する考え方が知れるスライド
 - [初めての自動テスト](https://www.oreilly.co.jp/books/9784873118161/)
