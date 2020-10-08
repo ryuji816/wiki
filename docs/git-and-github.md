@@ -15,6 +15,7 @@ Gitは分散型のバージョン管理を行うソフトウェアで，Linuxを
 - 上記記事では理解しきれなかった場合
   - [はじめてのGit - Speaker Deck](https://speakerdeck.com/d_hirayama/hazimetefalsegit)
   - [仕組みから理解する Git 入門 ~ ひとり開発でも便利 ~ - Speaker Deck](https://speakerdeck.com/mu_zaru/shi-zu-mikarali-jie-suru-git-ru-men-hitorikai-fa-demobian-li)
+  - [怖くないGit](https://www.slideshare.net/kotas/git-15276118)
 
 
 ### GitHub
